@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;600;700&display=swap');
+
+@font-face {
+  font-family: 'futura-pt';
+  src: url('@/assets/Futura/FuturaPTMedium.otf') format('opentype'),
+    url('@/assets/Futura/FuturaPTLight.otf') format('opentype');
+}
+
+:root{
+  --dark-cyan: #39374d;
+
+  --white: #fff;
+  --off-white: #ebebeb;
+
+  --black: #000;
+  --shadow-black: 0px 5px 20px -1px #e1e1e1;
+  --shadow-black-2: 0 5px 70px rgba(38,42,76,.1);
+  
+  --dark-gray:#7c7c7c;
+  --medium-gray:#F1F1F2;
+  --extra-medium-gray: #b9b8b8;
+  --light-gray: #696969;
+  --extra-light-gray: #dcdcdc;
+
+  --light-blue:#455880;
+}
+h1,h2,h3,h4,h5,h6{
+  color: var(--dark-cyan)!important;
+}
+
+
+body {
+  font-family: 'Futura PT Medium', 'Josefin Sans' !important;
+}
+
+.container {
+  position: relative;
+  max-width: 1260px !important;
+}
+.header-top{
+  z-index: 99;
+  position: relative;
+  background: var(--white);
+}
+.header-top .social a, 
+.header-top .contact a {
+  color: #686868;
+  padding: 10px 20px;
+  display: inline-block;
+  border-left: 1px solid var(--extra-medium-gray);
+  font-size: 13px;
+  text-decoration: none;
+  font-weight: 500;
+}
+.header-top .social span:last-child a {
+  border-right: 1px solid var(--extra-medium-gray);
+}
+
+.navbar-brand {
+  letter-spacing: 2px;
+  font-size: 1.4rem !important;
+  text-shadow: 1px 1px #bbbbbb;
+  font-family: "Futura PT Medium"!important;
+}
+nav.navbar {
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.1s;
+  background: var(--white);
+}
+nav.navbar.hovered {
+  border-color: var(--extra-medium-gray);
+}
+.nav-item .nav-link {
+  padding: 25px 15px !important;
+}
+.nav-item a {
+  font-weight:600;
+  color: var(--black);
+  font-size: 16px;
+  font-family: 'Josefin Sans', sans-serif !important;
+}
+.dropdown-menu {
+  display: block !important;
+  position: relative !important;
+  border: none !important;
+}
+.nav-item:hover .mega-menu.active {
+  display: block !important;
+  left: 0;
+  background: var(--white);
+  top: 102%;
+}
+ul.flag li {
+  position: relative !important;
+}
+ul.flag li:before {
+  content: '';
+  width: 0;
+  text-align: center;
+  height: 2px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  background: var(--black);
+  transition: 0.2s;
+  transform: translateX(-50%);
+}
+ul.flag li:hover:before {
+  width: 100%;
+}
+ul.shopping li {
+  /* font-size: 16px; */
+  text-align: center;
+  font-family: Roboto;
+}
+
+.nav-item.search .input-box span.close {
+  cursor: pointer;
+}
+
+.nav-item.search .input-box input:focus {
+  outline: none;
+}
+
+.nav-item.search .input-box {
+  display: none !important;
+  z-index: 99;
+}
+.nav-item.search .input-box.active {
+  display: flex !important;
+  align-items: center;
+  background: var(--white);
+}
+
+.nav-item.quote a {
+  background: var(--medium-gray);
+  padding: 10px 30px !important;
+  margin-top: 15px;
+  margin-left: 15px;
+  font-family: 'Roboto' !important;
+  font-weight: 500;
+  border-radius: 5px;
+  display: block;
+  position: relative !important;
+  transition: 0.2s !important;
+  z-index: 2;
+  font-size: 15px;
+  color: var(--dark-cyan);
+}
+.nav-item.quote a:hover {
+  color: var(--white) !important;
+  background: 0 0 !important;
+}
+.nav-item.quote a::before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  right: 0;
+  transition: transform 0.25s cubic-bezier(0.38, 0.32, 0.36, 0.98) 0s,
+    -webkit-transform 0.25s cubic-bezier(0.38, 0.32, 0.36, 0.98) 0s;
+  transform: scaleX(0);
+  transform-origin: right center;
+  display: block;
+  border-radius: 5px;
+  background: var(--dark-cyan);
+}
+.nav-item.quote a:hover::before {
+  background: var(--dark-cyan);
+  transform: scale(1);
+  transform-origin: left center;
+  z-index: -1;
+}
+
+/* Group CSS */
+.title-part h2,
+.product-section h2.title,
+.living-main h2,
+.subscribe h2,
+.client-main h2 {
+  font-size: 42px;
+}
+
+.extra-item h2,
+.furniture-item h2 {
+  font-size: 36px;
+}
+
+p,
+span,
+a,
+button,
+input,
+textarea{
+  font-family: 'Roboto'!important;
+}
