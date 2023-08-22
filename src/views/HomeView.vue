@@ -30,7 +30,7 @@
         <div class="col-md-2" v-for="image in images" :key="image">
           <div class="client-item">
             <router-link :to="image.src" class="d-block text-center">
-              <img :src="`../src/assets/images/home-decor-${image.name}.png`" :alt="image.name" class="position-relative">
+              <img :src="image.name" :alt="image.name" class="position-relative">
             </router-link>
           </div>
         </div>
@@ -62,6 +62,14 @@ import ClientReview from '@/components/ClientReview.vue'
 import FooterPart from '@/components/FooterPart.vue'
 import BottomToTop from '@/components/BottomToTop.vue'
 
+// Images 
+import client1 from '@/assets/images/home-decor-client1.png'
+import client2 from '@/assets/images/home-decor-client2.png'
+import client3 from '@/assets/images/home-decor-client3.png'
+import client4 from '@/assets/images/home-decor-client4.png'
+import client5 from '@/assets/images/home-decor-client5.png'
+import client6 from '@/assets/images/home-decor-client6.png'
+
 export default {
   name: 'HomeView',
   components: {
@@ -81,12 +89,12 @@ export default {
   data(){
     return{
       images:[
-        {name:'client1', src:'/'},
-        {name:'client2', src:'/'},
-        {name:'client3', src:'/'},
-        {name:'client4', src:'/'},
-        {name:'client5', src:'/'},
-        {name:'client6', src:'/'}
+        {name: client1, src:'/'},
+        {name: client2, src:'/'},
+        {name: client3, src:'/'},
+        {name: client4, src:'/'},
+        {name: client5, src:'/'},
+        {name: client6, src:'/'}
       ]
     }
   }

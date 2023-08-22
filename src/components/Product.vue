@@ -9,7 +9,7 @@
                             <div class="product-container">
                                 <div class="product-image position-relative">
                                     
-                                        <img :src="`../src/assets/images/home_decor_${item.image}.jpg`" :alt="item.image" class="w-100">
+                                        <img :src="item.image" :alt="item.image" class="w-100">
                                         <span class="sale d-inline-block position-absolute top-0" v-if="item.sale">Sale 50%</span>
                                         <button class="position-absolute start-50 opacity-0">Add to cart</button>
                                     
@@ -50,7 +50,7 @@
                 <div class="row">
                     <div class="col-md-4" v-for="shipping in shippings" :key="shipping">
                         <div class="item text-center">
-                            <img :src="`../src/assets/images/home-decor-${shipping.src}.png`" :alt="shipping.src">
+                            <img :src="shipping.src" :alt="shipping.src">
                             <h3 class="pt-4">{{ shipping.name }}</h3>
                         </div>
                     </div>
@@ -63,6 +63,15 @@
 <script>
 import { faStar as fasStar} from '@fortawesome/free-solid-svg-icons';
 import { faStar as farStar } from '@fortawesome/free-regular-svg-icons';
+
+import shop_1 from '@/assets/images/home_decor_shop_1.jpg'
+import shop_2 from '@/assets/images/home_decor_shop_2.jpg'
+import shop_3 from '@/assets/images/home_decor_shop_3.jpg'
+import shop_4 from '@/assets/images/home_decor_shop_4.jpg'
+import icon1 from '@/assets/images/home-decor-icon1.png'
+import icon2 from '@/assets/images/home-decor-icon2.png'
+import icon3 from '@/assets/images/home-decor-icon3.png'
+
 export default{
     name:"ProductView",
     data(){
@@ -70,7 +79,7 @@ export default{
             maxRating: 5,
             items:[
                 {
-                    image:'shop_2', 
+                    image:shop_2, 
                     url:'/',
                     sale: true, 
                     title:'10" Wall Clock', 
@@ -80,7 +89,7 @@ export default{
                     star:4
                 },
                 {
-                    image:'shop_3', 
+                    image:shop_3, 
                     url:'/', 
                     sale: false, 
                     title:'Curved Dinign Chair', 
@@ -90,7 +99,7 @@ export default{
                     star:5
                 },
                 {
-                    image:'shop_1', 
+                    image:shop_1, 
                     url:'/', 
                     sale: false, 
                     title:'Metal and Wood Table', 
@@ -100,7 +109,7 @@ export default{
                     star:4
                 },
                 {
-                    image:'shop_4', 
+                    image:shop_4, 
                     url:'/', 
                     sale: true, 
                     title:'Potted Palm Leaf Plants', 
@@ -111,9 +120,9 @@ export default{
                 },
             ],
             shippings:[
-                {src:'icon1', name:'Fast and Free Shipping'},
-                {src:'icon2', name:'Hassle-Free Returns'},
-                {src:'icon3', name:'Satisfaction Guarantee'},
+                {src:icon1, name:'Fast and Free Shipping'},
+                {src:icon2, name:'Hassle-Free Returns'},
+                {src:icon3, name:'Satisfaction Guarantee'},
             ]
         }
     },

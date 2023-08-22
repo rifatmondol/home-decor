@@ -128,12 +128,12 @@
 
               <li class="nav-item flag-item position-relative">
                 <router-link class="nav-link" to="/"
-                  ><img :src="`../src/assets/images/${this.flags[0].value}-flag.png`" alt="flag"
+                  ><img src="@/assets/images/en-flag.png" alt="flag"
                 /></router-link>
                 <ul class="flag d-none position-absolute">
                   <li v-for="flag in flags" :key="flag.value">
                     <router-link to="/"
-                      ><img :src="`../src/assets/images/${flag.value}-flag.png`" alt="flag" /><span
+                      ><img :src="flag.value" :alt="flag.value" /><span
                         class="d-inline-block ms-2"
                         >{{ flag.name }}</span
                       ></router-link
@@ -178,6 +178,9 @@
 
 <script>
 // import {en} from "@/lang/en";
+import enFlag from '@/assets/images/en-flag.png'
+import frFlag from '@/assets/images/fr-flag.png'
+import deFlag from '@/assets/images/de-flag.png'
 
 export default {
   name: 'HeaderComponent',
@@ -327,9 +330,9 @@ export default {
         { text: 'Extra', url: '/' }
       ],
       flags: [
-        { value: 'en', name: 'English' },
-        { value: 'fr', name: 'Francais' },
-        { value: 'de', name: 'Deutsch' }
+        { value: enFlag, name: 'English' },
+        { value: frFlag, name: 'Francais' },
+        { value: deFlag, name: 'Deutsch' }
       ]
     }
   },

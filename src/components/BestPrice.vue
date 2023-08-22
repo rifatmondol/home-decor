@@ -14,7 +14,7 @@
                         <div class="col-md-4" v-for="list in lists" :key="list.img">
                             <div class="content-item">
                                 <div class="image-part">
-                                    <router-link to="/"><img :src="`../src/assets/images/home-${list.img}.jpg`" alt="main-image"></router-link>
+                                    <router-link to="/"><img :src="list.img" :alt="list.img"></router-link>
                                 </div>
                                 <div class="details-part mt-4">
                                     <h5>{{ list.title }}</h5>
@@ -31,14 +31,18 @@
 </template>
 
 <script>
+import decor2 from '@/assets/images/home-decor2.jpg'
+import decor3 from '@/assets/images/home-decor3.jpg'
+import decor4 from '@/assets/images/home-decor4.jpg'
+
 export default{
     name:'BestPrice',
     data(){
         return{
             lists:[
-                {img: 'decor2', title: 'Furniture', description: 'Give your space a unique and modern look with home goods from artisans worldwide. You can shop online and pick up in-store or curbside.', button:'Shop Now'},
-                {img: 'decor3', title: 'Lighting', description: 'Give your space a unique and modern look with home goods from artisans worldwide. You can shop online and pick up in-store or curbside.', button:'Shop Now'},
-                {img: 'decor4', title: 'Bedding', description: 'Give your space a unique and modern look with home goods from artisans worldwide. You can shop online and pick up in-store or curbside.', button:'Shop Now'},
+                {img: decor2, title: 'Furniture', description: 'Give your space a unique and modern look with home goods from artisans worldwide. You can shop online and pick up in-store or curbside.', button:'Shop Now'},
+                {img: decor3, title: 'Lighting', description: 'Give your space a unique and modern look with home goods from artisans worldwide. You can shop online and pick up in-store or curbside.', button:'Shop Now'},
+                {img: decor4, title: 'Bedding', description: 'Give your space a unique and modern look with home goods from artisans worldwide. You can shop online and pick up in-store or curbside.', button:'Shop Now'},
             ]
         }
     }
