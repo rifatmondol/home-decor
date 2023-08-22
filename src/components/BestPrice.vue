@@ -11,7 +11,7 @@
 
                 <div class="content-part mt-5 pt-4">
                     <div class="row">
-                        <div class="col-md-4" v-for="list in lists" :key="list.img">
+                        <div class="col-md-4 mb-4" v-for="list in lists" :key="list.img">
                             <div class="content-item">
                                 <div class="image-part">
                                     <router-link to="/"><img :src="list.img" :alt="list.img"></router-link>
@@ -50,49 +50,4 @@ export default{
 </script>
 
 <style>
-.best-price .container{
-    max-width: 1200px!important;
-}
-.title-part p{
-    font-family: helvetica neue,Helvetica,Arial,sans-serif!important;
-    color: var(--dark-gray);
-    font-weight: 500;
-    font-size: 19px;
-}
-
-.image-part a {
-    outline: 1px solid transparent;
-    border-radius: 8px;
-    display: block;
-    background: var(--white);
-    transition: 0.2s;
-}
-.image-part a:hover{
-    outline: 1px solid var(--off-white)!important;
-    box-shadow: var(--shadow-black);
-}
-.image-part a img{
-    width: 100%;
-    transition: 0.3s;
-}
-.image-part a:hover img{
-    transform: scale(0.94);
-}
-
-
-.details-part h5 {
-    color: var(--dark-cyan);
-    font-family: 'Futura PT Light';
-    font-weight: 600;
-    font-size: 20px;
-    letter-spacing: 0.5px;
-}
-.details-part p{
-    color: var(--light-gray);
-
-}
-.details-part a{
-    color: var(--dark-gray);
-    font-weight: 500;
-}
 </style>

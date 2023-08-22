@@ -4,7 +4,7 @@
             <div class="contact-main px-3">
                 <div class="row">
                     <div class="col-md-6">
-                        <div class="accordion-section pt-5">
+                        <div class="accordion-section pt-md-5 pt-3">
                             <div class="accordion" id="accordionPanelsStayOpenExample">
                                 <div class="accordion-item mb-3 py-2 px-3" v-for="item in items" :key="item.id">
                                     <h2 class="accordion-header" :id="item.id">
@@ -22,9 +22,9 @@
 
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="get-in-touch mx-3 py-5 text-center">
-                            <div class="get-in-inner px-4 mx-5">
+                    <div class="col-md-6 mt-5 mt-md-0">
+                        <div class="get-in-touch mx-lg-3 py-5 text-center">
+                            <div class="get-in-inner px-lg-4 mx-lg-5 px-3">
                                 <h3 class="mb-4">Let's get in touch</h3>
                                 <p class="mb-5">Our experts and developers would love to contribute their expertise and insights to your potencial projects</p>
 
@@ -98,69 +98,5 @@ export default{
 </script>
 
 <style>
-.contact-main{
-    background-image: url(@/assets/images/home-decor-lines3.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    min-height: 600px;
-    position: relative;
-    padding: 90px 0px;
-}
-.contact-main:before{
-    content: '';
-    position: absolute;
-    background: var(--medium-gray);
-    top:0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-}   
-.accordion-button{
-    box-shadow:none!important;
-    background: transparent!important;
-}
-.accordion-item{
-    border-radius: 5px!important;
-}
-.accordion-item h2.accordion-header button{
-    font-family: 'Futura PT Medium'!important;
-    color: var(--dark-cyan);
-}
-.accordion-body p{
-    color: var(--dark-gray);
-}
-.get-in-touch{
-    border-radius: 7px;
-    background: var(--white);
-    box-shadow: var(--shadow-black);
-}
-.get-in-touch p{
-    color: var(--light-blue);
-    font-size: 15px;
-    letter-spacing: 0.01em;
-    font-family: Helvetica, sans-serif!important;
-}
-.get-in-touch button{
-    background: var(--dark-cyan);
-    color: var(--off-white);
-    border: none;
-    padding: 15px 55px;
-    font-weight: 600;
-    border-radius: 5px;
-    font-size: 15px;
-}
 
-.input-box input, .input-box textarea {
-    background: var(--medium-gray);
-    text-indent: 10px;
-    color: var(--black);
-    border: 1px solid var(--extra-light-gray)!important;
-}
-.input-box textarea::placeholder{
-    color: var(--dark-cyan);
-}
-.input-box textarea:focus-visible{
-    outline: none;
-}
 </style>

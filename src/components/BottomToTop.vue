@@ -5,9 +5,12 @@
         <svg class="progress-svg" viewBox="0 0 100 100">
           <circle class="progress-background" cx="50" cy="50" r="45"></circle>
           <circle class="progress-bar" cx="50" cy="50" r="45" :stroke-dasharray="circleDashArray" :stroke-dashoffset="circleDashOffset"></circle>
+          
         </svg>
+        <font-awesome-icon icon="fa-solid fa-arrow-up" class="font"/>
+        
       </div>
-      Top
+      
     </button>
 
     <!-- Your page content here -->
@@ -68,8 +71,10 @@ export default {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background-color: #ffffff;
-  border: 2px solid #3498db;
+  background-color: transparent;
+  /* border: 2px solid #3498db; */
+  border: none;
+  padding: 0;
   cursor: pointer;
 }
 
@@ -83,7 +88,14 @@ export default {
   width: 100%;
   height: 100%;
 }
-
+.progress-circle .font{
+  position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 20px;
+    color: var(--dark-cyan);
+}
 .progress-background {
   fill: none;
   stroke: #ccc;
@@ -91,10 +103,10 @@ export default {
 }
 
 .progress-bar {
-  fill: none;
-  stroke: #3498db;
-  stroke-width: 4;
-  transform: translate(5px, 5px);
-  transition: stroke-dashoffset 0.3s ease;
+    fill: none;
+    stroke: #3498db;
+    stroke-width: 8px;
+    transform: translate(0px, 0px);
+    transition: stroke-dashoffset 0.3s ease;
 }
 </style>

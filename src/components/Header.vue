@@ -25,9 +25,36 @@
       </div>
     </div>
     <!-- Main nav -->
-    <nav class="navbar navbar-expand-lg sticky-top py-0 top-0" :class="{ hovered: isHovered }">
+    <nav class="navbar navbar-expand-lg sticky-top top-0" :class="{ hovered: isHovered }">
       <div class="container">
-        <router-link class="navbar-brand" to="/">SWAY</router-link>
+        <router-link class="navbar-brand" to="/">SWAY </router-link>
+        <ul class="navbar-nav justify-content-end flex-row flex-grow-1 pe-md-3">
+            <li class="nav-item search position-relative d-block d-lg-none">
+                <router-link to="/" class="nav-link py-0" @click="searchClick()">
+                    <font-awesome-icon icon="fa-solid fa-magnifying-glass" v-if="IsActive == false"/>
+                    <font-awesome-icon icon="fa-solid fa-xmark" v-else @click.stop.prevent="closeClick()"/>
+                </router-link>
+                <!-- Search Box -->
+                <div
+                    class="input-box position-absolute"
+                    :class="{ active: IsActive }"
+                >
+                    <input type="text" class="border w-100 h-50 p-2" placeholder="Search..." />
+                    <span class="close ms-2">
+                        <font-awesome-icon icon="fa-solid fa-magnifying-glass" />
+                    </span>
+                </div>
+                <!-- Search Box -->
+            </li>
+            <li class="nav-item cart-item position-relative d-block d-lg-none">
+                <router-link to="/" class="nav-link py-0">
+                    <font-awesome-icon icon="fa-solid fa-cart-shopping"/>
+                </router-link>
+                <ul class="shopping d-none position-absolute">
+                    <li>Your cart is currently empty.</li>
+                </ul>
+            </li>
+        </ul>
         <button
           class="navbar-toggler"
           type="button"
@@ -53,7 +80,7 @@
             ></button>
           </div>
           <div class="offcanvas-body">
-            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-lg-3 main-nav">
               <li class="nav-item" v-for="menu in menus" :key="menu">
                 <router-link
                   class="nav-link"
@@ -64,11 +91,11 @@
                   >{{ menu.text }}
                 </router-link>
                 <div
-                  class="mega-menu w-100 py-5 position-absolute d-none"
+                  class="mega-menu w-100 py-lg-5 position-absolute d-none"
                   :class="{ active: menu.dropdown }"
                 >
                   <div class="row">
-                    <div class="col-md-2">
+                    <div class="col-lg-2">
                       <ul class="dropdown-menu">
                         <li v-for="submenu in menu.subnav1" :key="submenu">
                           <router-link class="dropdown-item" :to="submenu.url">{{
@@ -77,7 +104,7 @@
                         </li>
                       </ul>
                     </div>
-                    <div class="col-md-2">
+                    <div class="col-lg-2">
                       <ul class="dropdown-menu">
                         <li v-for="submenu in menu.subnav2" :key="submenu">
                           <router-link class="dropdown-item" :to="submenu.url">{{
@@ -86,7 +113,7 @@
                         </li>
                       </ul>
                     </div>
-                    <div class="col-md-2">
+                    <div class="col-lg-2">
                       <ul class="dropdown-menu">
                         <li v-for="submenu in menu.subnav3" :key="submenu">
                           <router-link class="dropdown-item" :to="submenu.url">{{
@@ -95,7 +122,7 @@
                         </li>
                       </ul>
                     </div>
-                    <div class="col-md-2">
+                    <div class="col-lg-2">
                       <ul class="dropdown-menu">
                         <li v-for="submenu in menu.subnav4" :key="submenu">
                           <router-link class="dropdown-item" :to="submenu.url">{{
@@ -104,7 +131,7 @@
                         </li>
                       </ul>
                     </div>
-                    <div class="col-md-2">
+                    <div class="col-lg-2">
                       <ul class="dropdown-menu">
                         <li v-for="submenu in menu.subnav5" :key="submenu">
                           <router-link class="dropdown-item" :to="submenu.url">{{
@@ -113,7 +140,7 @@
                         </li>
                       </ul>
                     </div>
-                    <div class="col-md-2">
+                    <div class="col-lg-2">
                       <ul class="dropdown-menu">
                         <li v-for="submenu in menu.subnav6" :key="submenu">
                           <router-link class="dropdown-item" :to="submenu.url">{{
@@ -127,7 +154,7 @@
               </li>
 
               <li class="nav-item flag-item position-relative">
-                <router-link class="nav-link" to="/"
+                <router-link class="nav-link dropdown-toggle" to="/"
                   ><img src="@/assets/images/en-flag.png" alt="flag"
                 /></router-link>
                 <ul class="flag d-none position-absolute">
@@ -141,7 +168,7 @@
                   </li>
                 </ul>
               </li>
-              <li class="nav-item cart-item position-relative">
+              <li class="nav-item cart-item position-relative d-none d-lg-block">
                 <router-link to="/" class="nav-link"
                   ><font-awesome-icon icon="fa-solid fa-cart-shopping"
                 /></router-link>
@@ -149,24 +176,25 @@
                   <li>Your cart is currently empty.</li>
                 </ul>
               </li>
-              <li class="nav-item search">
-                <router-link to="/" class="nav-link" @click="searchClick()"
-                  ><font-awesome-icon icon="fa-solid fa-magnifying-glass"
-                /></router-link>
+              <li class="nav-item search position-relative d-none d-lg-block">
+                <router-link to="/" class="nav-link" @click="searchClick()">
+                  <font-awesome-icon icon="fa-solid fa-magnifying-glass" v-if="IsActive == false"/>
+                  <font-awesome-icon icon="fa-solid fa-xmark" v-else @click.stop.prevent="closeClick()"/>
+                </router-link>
                 <!-- Search Box -->
                 <div
-                  class="input-box w-100 h-100 position-absolute top-0 start-0"
+                  class="input-box position-absolute"
                   :class="{ active: IsActive }"
                 >
                   <input type="text" class="border w-100 h-50 p-2" placeholder="Search..." />
-                  <span class="close ms-2" @click="closeClick()"
-                    ><font-awesome-icon icon="fa-solid fa-xmark"
-                  /></span>
+                  <span class="close ms-2">
+                    <font-awesome-icon icon="fa-solid fa-magnifying-glass" />
+                  </span>
                 </div>
                 <!-- Search Box -->
               </li>
               <li class="nav-item quote">
-                <router-link to="/" class="nav-link">Get a Quote</router-link>
+                <router-link to="/" class="nav-link text-center">Get a Quote</router-link>
               </li>
             </ul>
           </div>
@@ -356,6 +384,9 @@ export default {
 </script>
 
 <style>
+.nav-item.flag-item .nav-link.dropdown-toggle:after{
+  display: none;
+}
 li.nav-item.flag-item:hover ul.flag {
   left: -10px;
   display: block !important;

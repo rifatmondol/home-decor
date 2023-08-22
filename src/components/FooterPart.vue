@@ -3,8 +3,8 @@
         <div class="container">
             <div class="footer-main">
                 <div class="footer-top py-4">
-                    <div class="top-menu d-flex justify-content-between">
-                        <ul class="navbar-nav p-0 flex-row flex-grow-1 ">
+                    <div class="top-menu d-md-flex justify-content-between">
+                        <ul class="navbar-nav p-0 flex-sm-row flex-grow-1 ">
                             <li class="nav-item" v-for="item in items" :key="item">
                                 <router-link :to="item.url" class="text-decoration-none">{{ item.menuName }}</router-link>
                             </li>
@@ -24,29 +24,29 @@
                     </div>
                 </div>
                 <hr class="m-0">
-                <div class="footer-middle py-5">
+                <div class="footer-middle py-md-5 py-3">
                     <div class="row">
-                        <div class="col-md-4">
+                        <div class="col-lg-4">
                             <div class="middle-item my-4">
                                 <h5 class="mb-4">SWAY</h5>
-                                <p class="me-4 pe-5">Our feet are on the ground, but our ambitions are above the clouds. Here is how we move from the getting to know you phase to creating something remarkable</p>
+                                <p class="me-4 pe-xl-5 pe-lg-0 pe-md-5 pe-5">Our feet are on the ground, but our ambitions are above the clouds. Here is how we move from the getting to know you phase to creating something remarkable</p>
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-lg-3 col-md-6">
                             <div class="middle-item my-4">
-                                <h5 class="text-center mb-3">About</h5>
+                                <h5 class="text-lg-center mb-3">About</h5>
                                 <ul class="navbar-nav p-0 flex-grow-1 ">
-                                    <li class="nav-item text-center" v-for="item in middleMenu1" :key="item">
+                                    <li class="nav-item text-lg-center" v-for="item in middleMenu1" :key="item">
                                         <router-link :to="item.url" class="text-decoration-none">{{ item.menuName }}</router-link>
                                     </li>
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-lg-3 col-md-6">
                             <div class="middle-item my-4">
-                                <h5 class="text-center mb-3">Products</h5>
+                                <h5 class="text-lg-center mb-3">Products</h5>
                                 <ul class="navbar-nav p-0 flex-grow-1 ">
-                                    <li class="nav-item text-center" v-for="item in middleMenu2" :key="item">
+                                    <li class="nav-item text-lg-center" v-for="item in middleMenu2" :key="item">
                                         <router-link :to="item.url" class="text-decoration-none">{{ item.menuName }}</router-link>
                                     </li>
                                 </ul>
@@ -54,10 +54,10 @@
                         </div>
                         <div class="col-md-2">
                             <div class="middle-item last my-4">
-                                <h5 class="text-end mb-4">Contact</h5>
+                                <h5 class="text-lg-end mb-4">Contact</h5>
                                 <ul class="navbar-nav p-0 flex-grow-1 ">
-                                    <li class="nav-item text-end">New York. 112 W <br> 34th St, Manhattan</li>
-                                    <li class="nav-item text-end">
+                                    <li class="nav-item text-lg-end">New York. 112 W <br> 34th St, Manhattan</li>
+                                    <li class="nav-item text-lg-end">
                                         <a href="tel:+1 2124454320" class="text-decoration-none">(1) 212-445-4320</a>
                                     </li>
                                 </ul>
@@ -70,12 +70,12 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="bottom-item">
-                                <p class="m-0 fw-medium">© 2023 Sway by KeyDesign. All Rights Reserved.</p>
+                                <p class="m-0 fw-medium text-md-start text-center">© 2023 Sway by KeyDesign. All Rights Reserved.</p>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="bottom-item">
-                                <ul class="navbar-nav flex-row justify-content-end p-0 flex-grow-1">
+                                <ul class="navbar-nav d-md-flex d-block flex-row justify-content-end p-0 flex-grow-1">
                                     <li class="nav-item text-center">
                                         <router-link to="/" class="text-decoration-none">Terms of Use</router-link>
                                     </li>
@@ -162,74 +162,4 @@ export default{
 </script>
 
 <style>
-footer {
-    background: var(--medium-gray);
-    margin-top: 80px;
-}
-.top-menu ul li{
-    padding: 0px 15px;
-}
-.top-menu ul li a{
-    padding: 10px 0px!important;
-}
-.top-menu .social span a{
-    padding: 10px 15px!important;
-}
-.top-menu .social span:last-child a{
-    padding-right: 0!important;
-}
-
-.top-menu ul li a,
-.top-menu .social span a,
-.bottom-item ul li a{
-    font-family: 'Roboto'!important;
-    font-weight: 500;
-    color: var(--dark-cyan)!important;
-    display: inline-block;
-    position: relative;
-}
-
-
-.middle-item ul li a{
-    padding: 10px 0px;
-    font-family: 'Roboto'!important;
-    font-weight: 500;
-    color: var(--dark-cyan);
-    display: inline-block;
-}
-.middle-item ul li a{
-    position: relative;
-}
-
-.middle-item ul li,
-.middle-item.last ul li a{
-    font-family: 'Roboto'!important;
-    font-weight: 400;
-    color: var(--dark-cyan);
-    display: inline-block;
-    padding: 0;
-}
-.middle-item ul li a:before,
-.top-menu ul li a:before {
-  content: '';
-  width: 0;
-  text-align: center;
-  height: 2px;
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  background: var(--black);
-  transition: 0.2s;
-  transform: translateX(-50%);
-}
-.middle-item ul li a:hover:before,
-.top-menu ul li a:hover:before {
-  width: 100%;
-}
-.bottom-item p{
-    color: var(--dark-cyan);
-}
-.bottom-item ul li a{
-    padding: 0px 5px;
-}
 </style>
