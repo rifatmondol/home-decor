@@ -25,7 +25,7 @@
       </div>
     </div>
     <!-- Main nav -->
-    <nav class="navbar navbar-expand-lg sticky-top top-0" :class="{ hovered: isHovered }">
+    <nav class="navbar navbar-expand-lg sticky-top top-0 py-0" :class="{ hovered: isHovered }">
       <div class="container">
         <router-link class="navbar-brand" to="/">SWAY </router-link>
         <ul class="navbar-nav justify-content-end flex-row flex-grow-1 pe-md-3">
